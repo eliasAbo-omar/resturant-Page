@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #bbb;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a.active,
+nav a:hover {
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
+    url("../image/professional\ photo\ of\ صورة\ احترافية\ لمشاوي\ لحم\ طازجة\ على\ الفحم،\ كباب\ ولحم\ مشوي،\ مع\ دخان\ خفيف،\ إضاءة\ دافئة،\ تصوير\ طعام\ احترافي\,\ photography\(1\).jpg")
+      no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #ccc;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.white-btn {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.white-btn:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+section {
+  padding: 100px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+section.light-bg {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+section.dark-bg {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+section.dark-bg {
+  flex-direction: row-reverse;
+}
+
+.content-area {
+  flex: 1;
+  max-width: 500px;
+}
+
+.content-area h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* خط ديكوري أسفل العناوين */
+.light-bg .content-area h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #000;
+  margin-top: 10px;
+}
+
+.dark-bg .content-area h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.content-area p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: inherit;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.image-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-area img {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.dark-bg .image-area img {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+}
+
+.image-area img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  background-color: #000;
+  color: #777;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  border-top: 1px solid #111;
+}
+
+/* Responsive Styles (for smaller screens width <= 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  nav a {
+    margin: 0 5px;
+  }
+  section,
+  section.dark-bg {
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .content-area h2::after {
+    margin: 10px auto 0 auto;
+  }
+  .image-area img {
+    height: 350px;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+}
